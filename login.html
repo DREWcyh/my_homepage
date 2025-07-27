@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 8px #ccc;
+        }
+
+        input[type="password"],
+        button {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>请输入密码登录</h2>
+        <input type="password" id="password" placeholder="密码" />
+        <button id="loginBtn">登录</button>
+        <div class="error" id="errorMsg"></div>
+    </div>
+
+    <script>
+        const correctPassword = "777777"; // 你的密码
+
+        const loginBtn = document.getElementById("loginBtn");
+        const passwordInput = document.getElementById("password");
+        const errorMsg = document.getElementById("errorMsg");
+
+        loginBtn.addEventListener("click", () => {
+            const entered = passwordInput.value.trim();
+            if (entered === correctPassword) {
+                localStorage.setItem("isLoggedIn", "true");
+                window.location.href = "index.html"; // 跳转主页
+            } else {
+                errorMsg.textContent = "密码错误，请重试。";
+            }
+        });
+
+        // 支持回车登录
+        passwordInput.addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+                loginBtn.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
