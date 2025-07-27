@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="陈奕涵的学术主页 - 个人简介、研究方向、联系方式、论文成果、学习成绩、留言板" />
+    <meta name="author" content="陈奕涵" />
+    <title>陈奕涵的学术主页</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- 固定顶部导航栏 -->
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="#about" class="nav-link active">关于我</a></li>
+                <li><a href="#research" class="nav-link">研究方向</a></li>
+                <li><a href="#publications" class="nav-link">论文成果</a></li>
+                <li><a href="#grades" class="nav-link">学习成绩</a></li>
+                <li><a href="#contact" class="nav-link">联系方式</a></li>
+                <li><a href="#message-board" class="nav-link">留言板</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div id='resume'>
+            <!-- 个人简介 -->
+            <section id="about" class="section">
+                <h2>关于我</h2>
+                <div class="about-container">
+                    <div class="about-text">
+                        <p>我是陈奕涵，清华大学2024级计算机与金融双学位班在读学生，专注于人工智能、算法博弈论等方向。</p>
+                    </div>
+                    <img src="img/avatar.jpg" alt="个人头像" class="avatar" />
+                </div>
+            </section>
+
+            <!-- 研究方向 -->
+            <section id="research" class="section">
+                <h2>研究方向</h2>
+                <p>我的主要研究方向包括人工智能、机器学习、数据挖掘与大数据分析。</p>
+            </section>
+
+            <!-- 论文成果 -->
+            <section id="publications" class="section">
+                <h2>论文成果</h2>
+                <p><em> 目前暂无论文发表，正在积极积累研究经验与项目成果。</em></p>
+            </section>
+
+            <!-- 学习成绩 -->
+            <section id="grades" class="section">
+                <h2>学习成绩</h2>
+                <!-- 成绩总览 -->
+                <div class="grades-summary">
+                    <p><strong>绩点：</strong>3.94 / 4.0</p>
+                    <p><strong>专业排名：</strong> 6 / 33 </p>
+                </div>
+                <!-- 课程列表 -->
+                <ul class="course-list">
+                    <li class="course-item">
+                        <p><strong>微积分A1、A2：</strong>4.0</p>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>线性代数：</strong>4.0</p>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>高等线性代数选讲：</strong>4.0</p>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>面向计算机科学的离散数学：</strong>4.0</p>
+                        <ul class="assignment-links">
+                            <li><a href="files/图论project_陈奕涵.pdf" target="_blank">应用模拟退火算法解决投资组合优化问题——图论PROJECT</a></li>
+                        </ul>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>程序设计基础：</strong>4.0</p>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>面向对象的程序设计基础：</strong>4.0</p>
+                        <ul class="assignment-links">
+                            <li><a href="files/面向对象的程序设计基础project_陈奕涵.pdf" target="_blank">TinyXML项目阅读报告</a></li>
+                        </ul>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>经济学原理：</strong>4.0</p>
+                    </li>
+                    <li class="course-item">
+                        <p><strong>会计学原理：</strong>4.0</p>
+                        <ul class="assignment-links">
+                            <li><a href="files/会计学原理project_陈奕涵.pdf" target="_blank">对半导体封测行业龙头公司的财报分析</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 联系方式 -->
+            <section id="contact" class="section">
+                <h2>联系方式</h2>
+                <p>邮箱：chenyiha24@mails.tsinghua.edu.cn</p>
+                <p>电话：13515950800</p>
+                <p>微信：cccyh777777</p>
+            </section>
+        </div>
+        <section class="section">
+        <a href="chenyihan_resume.pdf" download="chenyihan_resume.pdf">
+            <button id="download-cv" class="btn">下载简历</button>
+        </a>
+        </section>
+
+        <!-- 留言板 -->
+
+        <section id="message-board" class="section">
+            <h2>留言板</h2>
+            <form id="message-form">
+                <input type="text" id="nickname" placeholder="昵称" maxlength="20" required />
+                <textarea id="message" rows="3" placeholder="请输入留言内容" maxlength="200" required></textarea>
+                <button type="submit" class="btn">提交留言</button>
+            </form>
+            <ul id="message-list" class="message-list">
+                <!-- 留言动态插入 -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>©陈奕涵</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
