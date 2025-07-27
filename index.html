@@ -11,6 +11,22 @@
 </head>
 
 <body>
+    <script>
+        const password = "777777"; // 你设定的访问密码
+
+        const entered = sessionStorage.getItem("authenticated");
+
+        if (entered !== "yes") {
+            const input = prompt("请输入访问密码：");
+            if (input === password) {
+                sessionStorage.setItem("authenticated", "yes");
+            } else {
+                document.body.innerHTML = "<h2>密码错误，禁止访问。</h2>";
+                throw new Error("Unauthorized");
+            }
+        }
+    </script>
+
     <!-- 固定顶部导航栏 -->
     <header class="header">
         <nav class="nav">
@@ -105,9 +121,9 @@
             </section>
         </div>
         <section class="section">
-        <a href="chenyihan_resume.pdf" download="chenyihan_resume.pdf">
-            <button id="download-cv" class="btn">下载简历</button>
-        </a>
+            <a href="chenyihan_resume.pdf" download="chenyihan_resume.pdf">
+                <button id="download-cv" class="btn">下载简历</button>
+            </a>
         </section>
 
         <!-- 留言板 -->
