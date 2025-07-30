@@ -17,7 +17,6 @@ db_config = {
 # 提交留言接口
 @app.route('/submit', methods=['POST'])
 def submit():
-    print("收到请求")
     data = request.get_json()
     print("收到留言数据：", data)
     username = data.get("username", "匿名")

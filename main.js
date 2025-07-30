@@ -41,55 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-
-
-    // ----- 4. 留言板功能 -----
-    // 留言数据存储（页面刷新会丢失）
-    let messages = [];
-
-    function renderMessages() {
-        messageList.innerHTML = '';
-        messages.forEach((msg, index) => {
-            const li = document.createElement('li');
-            li.classList.add('message-item');
-            li.innerHTML = `
-        <span class="nickname">${escapeHTML(msg.nickname)}:</span>
-        <span class="content">${escapeHTML(msg.content)}</span>
-        <button class="delete-btn" data-index="${index}" title="删除留言">✖</button>
-      `;
-            messageList.appendChild(li);
-        });
-    }
-
-    messageForm.addEventListener('submit', e => {
-        e.preventDefault();
-        const nicknameInput = document.getElementById('nickname');
-        const messageInput = document.getElementById('message');
-        const nickname = nicknameInput.value.trim();
-        const content = messageInput.value.trim();
-
-        if (!nickname || !content) return;
-
-        messages.push({ nickname, content });
-        renderMessages();
-
-        // 清空输入框
-        nicknameInput.value = '';
-        messageInput.value = '';
-    });
-
-    // 删除留言事件委托
-    messageList.addEventListener('click', e => {
-        if (e.target.classList.contains('delete-btn')) {
-            const index = Number(e.target.dataset.index);
-            if (!isNaN(index)) {
-                messages.splice(index, 1);
-                renderMessages();
-            }
-        }
-    });
-
     // 防止XSS的简单转义函数
     function escapeHTML(str) {
         return str.replace(/[&<>"']/g, tag => {
